@@ -1,0 +1,11 @@
+{
+  "name": "duckduckgoseleniumjssearch",
+  "version": "1.0.0",
+  "description": "WebDriverJS base test automation framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oleg Zarevych",
+  "license": "UNLICENSED"
+}

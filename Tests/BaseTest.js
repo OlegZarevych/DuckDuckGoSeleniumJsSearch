@@ -1,4 +1,4 @@
-const timeOut = 7000;
+const timeOut = 60000;
 
 describe('DuckDuckGO Tests', function() {
 
@@ -17,7 +17,8 @@ this.timeout(timeOut);
     });
 
     it('Possible to enter text in search field', async function(){
-        await mainPage.searchText('Hello');
+        assert(await mainPage.isSearchFieldPresent(), "Search field is NOT present");        
+        let resultPage = await mainPage.searchText('Hello');
         //mainPage.isSearchFieldPresent();
     })
 })

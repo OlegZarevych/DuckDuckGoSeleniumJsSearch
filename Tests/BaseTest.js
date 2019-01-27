@@ -1,20 +1,23 @@
+const timeOut = 7000;
+
 describe('DuckDuckGO Tests', function() {
 
 var browser = require("../Browser");
 var mainPage = require("../Pages/MainPage");
-this.timeout(7000);
+var assert = require("assert");
 
-    beforeEach(function(done) {
-        browser.openPage("https://duckduckgo.com/");
-        done();
+this.timeout(timeOut);
+
+    beforeEach(async function() {
+        await browser.openPage("https://duckduckgo.com/");
     });
 
-    afterEach(function(done) {
-       browser.stop();
-       done();
+    afterEach(async function() {
+       await browser.stop();
     });
 
-    it('Possible to enter text in search field', function(){
-        mainPage.searchText('Hello')
+    it('Possible to enter text in search field', async function(){
+        await mainPage.searchText('Hello');
+        //mainPage.isSearchFieldPresent();
     })
 })
